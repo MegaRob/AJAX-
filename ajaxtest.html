@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>
+            testing
+        </title>
+    </head>
+
+<body>
+    
+
+    <h1>AJAX POST  FORM</h1>
+    <form id="postForm">
+        <input type="text" name="name" id="name2">
+        <input type="submit" value="Submit">
+    </form>
+
+    
+    </body>
+    <script>
+        
+
+        //AJAX POST FORM
+        document.getElementById('postForm').addEventListener('submit', postName);
+
+        // POST AJAX FUNCTION 
+        
+        function postName(e){
+            e.preventDefault();
+
+            var name   =  document.getElementById('name2').value;
+            var params = "name="+name;
+
+
+            var http = new XMLHttpRequest();
+            var url  = '/opt/lampp/htdocs/sandbox/process.php'; 
+            var params = 'orem=ipsum&name=binny';
+            http.open('POST', process.php, true);
+
+            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            http.onreadystatechange = function(){
+                if(http.readyState == 4 && http.status == 200) {
+                    alert(http.responseText);
+                }
+            }
+            http.send(params);
+
+
+        //     var xhr    =  new XMLHttpRequest();
+        //     xhr.open('POST', 'process.php', true);
+        //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        //     xhr.onload = function() {
+        //         console.log(this.responseText);
+        //     }
+
+        //    xhr.send(params);
+
+        // }
+
+    
+</html>
