@@ -1,7 +1,7 @@
 <?php
 
 //CONNECTING TO DATABASE
-require_once 'funfctions.php';
+require_once 'functions.php';
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($conn->connect_error) die("Fatal Error");
 
